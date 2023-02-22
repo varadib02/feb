@@ -26,16 +26,32 @@ public class Feb {
         double szam3=3.0;
         double szam4=1.5;
         
-        
+        /*
         System.out.println(Feb.osszeadas(szam1,szam2,szam3));
         Scanner muv = new Scanner(System.in);
         String muvelet=muv.next();
         System.out.println(Feb.szamologep(szam1,szam2,muvelet));
         muv.close();
-        
+        */
         
         //kopapirollo
-        Feb.kopapirollo();
+        System.out.println("Hány kört szeretne játszani?: ");
+        Scanner match = new Scanner(System.in);
+        int hossz=match.nextInt();
+        int gepW=0;
+        int teW=0;
+        int draw=0;
+        for (int i = 0; i < hossz; i++) {
+            int max =4;
+            int min =1;
+            int range = max-min+1;
+            int gep = (int)(Math.random() * range) + min;
+            System.out.println((i+1)+". Kör a Tipped (1-3): ");
+            Scanner bekert = new Scanner(System.in);
+            int bekeres=bekert.nextInt();
+            Feb.kopapirollo();
+            bekert.close(gepW,teW,draw,gep,bekeres);
+        }
     }
     
     //Acces modifier
@@ -68,21 +84,8 @@ public class Feb {
             return -1.0;
         }
     }
-    public  static void kopapirollo(){
-        System.out.println("Hány kört szeretne játszani?: ");
-        Scanner match = new Scanner(System.in);
-        int hossz=match.nextInt();
-        int gepW=0;
-        int teW=0;
-        int draw=0;
-        for (int i = 0; i < hossz; i++) {
-            int max =4;
-            int min =1;
-            int range = max-min+1;
-            int gep = (int)(Math.random() * range) + min;
-            System.out.println((i+1)+". Kör a Tipped (1-3): ");
-            Scanner bekert = new Scanner(System.in);
-            int bekeres=bekert.nextInt();
+    public  static void kopapirollo(int gepW,int teW,int draw,int gep,int bekeres){
+        
             
             if((bekeres==1 && gep==3)||(bekeres==2 && gep==1)||(bekeres==3 && gep==2)){
                 System.out.println("Nyertél");
@@ -97,8 +100,8 @@ public class Feb {
                 draw++;
             }
             
-            bekert.close();
-        }
+            
+        
         
         if(teW>gepW)  System.out.println("A játék győztese tehát te vagy.");
         else if(teW<gepW) System.out.println("A játék győztese tehát a gép.");
