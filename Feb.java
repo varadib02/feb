@@ -40,29 +40,23 @@ public class Feb {
             System.out.println("Hány kört szeretnél játszani: ");
             korok = x.nextInt();
             
-        
-            //Scanner myObj = new Scanner(System.in);
-                Integer userValasz;
-        
-            //System.out.println("Írd be a választásod ( Kő(1), Papír(2), Olló(3) ): "); 
-            //userValasz = myObj.nextInt(); 
-            
-            //System.out.println("User választása: " + userValasz); 
-            
-            /**            
-            int min = 1;
-            int max = 3;
-            int rand = (int)(Math.random()*(max-min+1)+min);  
-            System.out.println("Gép mutat: " + rand);
-            */
-            
+            Integer userValasz;
             int kor = 0;
-            
+            String sValasz;
             for(int i = 0; i < korok; i++){
                 System.out.println(i+1+ ". kör");
-                Scanner myObj = new Scanner(System.in);
-                System.out.println("Írd be a választásod ( Kő(1), Papír(2), Olló(3) ): "); 
-                userValasz = myObj.nextInt(); 
+                
+                boolean igazE;
+                do{
+                System.out.println("Írd be a választásod Kő(1), Papír(2), Olló(3): ");
+                Scanner tipp = new Scanner(System.in);
+                
+                userValasz = tipp.nextInt();
+                sValasz = tipp.next();
+                igazE = szame(userValasz);
+                }while (igazE!=true);                
+                    
+                
                 System.out.println("User választása: " + userValasz); 
                 
                 int min = 1;
@@ -114,6 +108,14 @@ public class Feb {
             } else{
                 return String.format("Gép nyert!");
             }
+    }
+    public static Boolean szame(int x){
+        
+        if(x>=1 && x<=3){
+            return true;
+        }
+        else return false;
+        
     }
     
     
