@@ -26,14 +26,14 @@ public class Feb {
         double szam3=3.0;
         double szam4=1.5;
         
-        /*
+        
         System.out.println(Feb.osszeadas(szam1,szam2,szam3));
         Scanner muv = new Scanner(System.in);
         String muvelet=muv.next();
         System.out.println(Feb.szamologep(szam1,szam2,muvelet));
         muv.close();
         
-        */
+        
         //kopapirollo
         Feb.kopapirollo();
     }
@@ -76,9 +76,10 @@ public class Feb {
         int teW=0;
         int draw=0;
         for (int i = 0; i < hossz; i++) {
-            Random r = new Random();
-            int gep=r.nextInt(1,4);
-            Math.random();
+            int max =4;
+            int min =1;
+            int range = max-min+1;
+            int gep = (int)(Math.random() * range) + min;
             System.out.println((i+1)+". Kör a Tipped (1-3): ");
             Scanner bekert = new Scanner(System.in);
             int bekeres=bekert.nextInt();
