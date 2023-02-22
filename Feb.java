@@ -35,25 +35,46 @@ public class Feb {
         */
         
         //kopapirollo
-        System.out.println("Hány kört szeretne játszani?: ");
-        Scanner match = new Scanner(System.in);
-        int hossz=match.nextInt();
-        int gepW=0;
-        int teW=0;
-        int draw=0;
-        for (int i = 0; i < hossz; i++) {
-            int max =4;
-            int min =1;
-            int range = max-min+1;
-            int gep = (int)(Math.random() * range) + min;
-            System.out.println((i+1)+". Kör a Tipped (1-3): ");
-            Scanner bekert = new Scanner(System.in);
-            int bekeres=bekert.nextInt();
-            Feb.kopapirollo();
-            bekert.close(gepW,teW,draw,gep,bekeres);
-        }
+        Scanner x = new Scanner(System.in);
+                    Integer korok;
+            System.out.println("Hány kört szeretnél játszani: ");
+            korok = x.nextInt();
+            
+        
+            //Scanner myObj = new Scanner(System.in);
+                Integer userValasz;
+        
+            //System.out.println("Írd be a választásod ( Kő(1), Papír(2), Olló(3) ): "); 
+            //userValasz = myObj.nextInt(); 
+            
+            //System.out.println("User választása: " + userValasz); 
+            
+            /**            
+            int min = 1;
+            int max = 3;
+            int rand = (int)(Math.random()*(max-min+1)+min);  
+            System.out.println("Gép mutat: " + rand);
+            */
+            
+            int kor = 0;
+            
+            for(int i = 0; i < korok; i++){
+                System.out.println(i+1+ ". kör");
+                Scanner myObj = new Scanner(System.in);
+                System.out.println("Írd be a választásod ( Kő(1), Papír(2), Olló(3) ): "); 
+                userValasz = myObj.nextInt(); 
+                System.out.println("User választása: " + userValasz); 
+                
+                int min = 1;
+                int max = 3;
+                int rand = (int)(Math.random()*(max-min+1)+min);  
+                System.out.println("Gép mutat: " + rand);
+                
+                System.out.println(Feb.kopapirollo(korok, userValasz, rand));
+            }
+        
     }
-    
+
     //Acces modifier
     //public,private ...
     //meghívás modja static vagy semmi
@@ -84,31 +105,16 @@ public class Feb {
             return -1.0;
         }
     }
-    public  static void kopapirollo(int gepW,int teW,int draw,int gep,int bekeres){
-        
-            
-            if((bekeres==1 && gep==3)||(bekeres==2 && gep==1)||(bekeres==3 && gep==2)){
-                System.out.println("Nyertél");
-                teW++;
+    public static String kopapirollo(Integer korok,Integer userValasz, Integer rand){
+            if(rand == userValasz){
+                return String.format("Döntetlen!");
             }
-            else if((bekeres==3 && gep==1)||(bekeres==1 && gep==2)||(bekeres==2 && gep==3)){
-                System.out.println("A gép nyert");
-                gepW++;
+            else if(rand==0 && userValasz==1 || rand==1 && userValasz==2 || rand==2 && userValasz==0){
+                return String.format("User nyert!");
+            } else{
+                return String.format("Gép nyert!");
             }
-            else{
-                System.out.println("Döntetlen");
-                draw++;
-            }
-            
-            
-        
-        
-        if(teW>gepW)  System.out.println("A játék győztese tehát te vagy.");
-        else if(teW<gepW) System.out.println("A játék győztese tehát a gép.");
-        else System.out.println("A játéknak nincs győztese.");
-        
-        System.out.println("Te nyertél: "+teW+", Gép nyert: "+gepW+", Döntetlen: "+draw);
-    
     }
+    
     
 }
