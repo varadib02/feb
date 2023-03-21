@@ -4,7 +4,6 @@
  */
 package feb;
 
-
 public class oop {
 
     
@@ -15,19 +14,27 @@ public class oop {
         
         System.out.println(szam);
         */
-        user u = new user();
-        u.name="alma";
-        System.out.println(u.name);
-        u.setszemlyigazolvanyszam("122");
-        System.out.println(u.getszemlyigazolvanyszam());
-        
-        user u2 = new user("Peti");
-        System.out.println(u2.name);
-        System.out.println(u2.getszemlyigazolvanyszam());
-        
-        user u3 = new user("István","123B");
-        System.out.println(u3.name);
-        System.out.println(u3.getszemlyigazolvanyszam());
+//        user u = new user();
+//        u.name="alma";
+//        System.out.println(u.name);
+//        u.setszemlyigazolvanyszam("122");
+//        System.out.println(u.getszemlyigazolvanyszam());
+//        
+//        user u2 = new user("Peti");
+//        System.out.println(u2.name);
+//        System.out.println(u2.getszemlyigazolvanyszam());
+//        
+//        user u3 = new user("István","123B");
+//        System.out.println(u3.name);
+//        System.out.println(u3.getszemlyigazolvanyszam());
+          kenyer k =new kenyer();
+          k.setName("Barna kenyér");
+          k.setAr(700);
+          k.setDb(5);
+          k.setSuly(1.0);
+          k.setCimke(k.getName(),k.getAr());
+          System.out.println(k.getcimke());
+          
     }
     
 }

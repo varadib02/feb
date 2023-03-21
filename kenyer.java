@@ -9,36 +9,67 @@ package feb;
  * @author User
  */
 public class kenyer {
-    public String name;
+    private String name;
     private String tipus;
     private String szin;
     private Integer ar;
     private Integer db;
-    private Integer suly;
+    private Double suly;
+    private String minoseg;
+    public String cimke;
+    private Boolean valtozas;
 
+    public kenyer() {
+        this.name = null;
+        this.tipus = null;
+        this.szin = null;
+        this.ar = null;
+        this.db = null;
+        this.suly = null;
+        this.minoseg = null;
+        this.cimke = null;
+        this.valtozas=false;
+    }
+    //name
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+        this.valtozas=true;
+    }
+    //ar
     public Integer getAr() {
         return ar;
     }
-
     public void setAr(Integer ar) {
         this.ar = ar;
+        this.valtozas=true;
     }
-
+    //db
     public Integer getDb() {
         return db;
     }
-
     public void setDb(Integer db) {
         this.db = db;
+        this.valtozas=true;
     }
-
-    public Integer getSuly() {
+    //suly
+    public Double getSuly() {
         return suly;
     }
-
-    public void setSuly(Integer suly) {
-        this.suly = suly;
+    public void setSuly(Double suly) {
+        if(suly<=1 && suly>=0.5){
+            this.suly = suly;
+            this.valtozas=true;
+        }
     }
-    
+    //cimke
+    public String getcimke() {
+        return cimke;
+    }
+    public void setCimke(String name,Integer ar) {
+        this.cimke = name+" "+ar+"Ft";
+    }
     
 }
