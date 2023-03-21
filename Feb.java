@@ -42,7 +42,6 @@ public class Feb {
             
             Integer userValasz;
             int kor = 0;
-            String sValasz;
             for(int i = 0; i < korok; i++){
                 System.out.println(i+1+ ". kör");
                 
@@ -52,7 +51,6 @@ public class Feb {
                 Scanner tipp = new Scanner(System.in);
                 
                 userValasz = tipp.nextInt();
-                sValasz = tipp.next();
                 igazE = szame(userValasz);
                 }while (igazE!=true);                
                     
