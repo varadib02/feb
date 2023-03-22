@@ -39,14 +39,16 @@ public class oop {
           k.setCimke(k.getName(),k.getAr());
           System.out.println(k.getcimke());*/
           
-          
-          Cat macska=new Cat();
-          Cat macska1=new Cat(false,"Cirmi",6,true);
-          System.out.println(macska1.getName());
-          System.out.println(macska1.getAge());
-          System.out.println(macska1.getMale());
-          System.out.println(macska1.getAlomkaki());
-          System.out.println(macska1.getLife());
+//          
+//          Cat macska=new Cat();
+//          Cat macska1=new Cat(false,"Cirmi",6,true);
+//          System.out.println(macska1.getName());
+//          System.out.println(macska1.getAge());
+//          System.out.println(macska1.getMale());
+//          System.out.println(macska1.getAlomkaki());
+//          System.out.println(macska1.getLife());
+
+           kenyer ujk=new kenyer(true,"barna", "nagy", 780, 1.0, "rosz","");
           
     }
     
