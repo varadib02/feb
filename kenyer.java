@@ -4,39 +4,39 @@
  */
 package feb;
 
-/**
- *
- * @author User
- */
+
+enum szin{
+barna,
+sötetbarna,
+vilagosbarna
+}
+
 public class kenyer {
     private String name;
     private String tipus;
-    private String szin;
+    private szin szin;
     private Integer ar;
-    private Integer db;
     private Double suly;
     private String minoseg;
     public String cimke;
-    private Boolean valtozas;
 
-    public kenyer() {
-        this.name = null;
-        this.tipus = null;
-        this.szin = null;
-        this.ar = null;
-        this.db = null;
-        this.suly = null;
-        this.minoseg = null;
-        this.cimke = null;
-        this.valtozas=false;
+    public kenyer(String name, String tipus, szin szin, Integer ar, Double suly, String minoseg, String cimke) {
+        this.name = name;
+        this.tipus = tipus;
+        this.szin = szin;
+        this.ar = ar;
+        this.suly = suly;
+        this.minoseg = minoseg;
+        this.cimke = cimke;
     }
+
+    
     //name
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
-        this.valtozas=true;
     }
     //ar
     public Integer getAr() {
@@ -44,15 +44,6 @@ public class kenyer {
     }
     public void setAr(Integer ar) {
         this.ar = ar;
-        this.valtozas=true;
-    }
-    //db
-    public Integer getDb() {
-        return db;
-    }
-    public void setDb(Integer db) {
-        this.db = db;
-        this.valtozas=true;
     }
     //suly
     public Double getSuly() {
@@ -61,7 +52,6 @@ public class kenyer {
     public void setSuly(Double suly) {
         if(suly<=1 && suly>=0.5){
             this.suly = suly;
-            this.valtozas=true;
         }
     }
     //cimke
@@ -69,7 +59,8 @@ public class kenyer {
         return cimke;
     }
     public void setCimke(String name,Integer ar) {
-        this.cimke = name+" "+ar+"Ft";
+        if(!name.equals("ujnev") && ar!=0)this.cimke = name+" "+ar+"Ft";
     }
+    
     
 }

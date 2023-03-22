@@ -27,13 +27,26 @@ public class oop {
 //        user u3 = new user("István","123B");
 //        System.out.println(u3.name);
 //        System.out.println(u3.getszemlyigazolvanyszam());
-          kenyer k =new kenyer();
+//        
+//        System.out.println(u.getdarab());
+//        System.out.println(u2.getdarab());
+        
+          /*kenyer k =new kenyer("feher","",szin.barna,720,1.0,"jó","");
           k.setName("Barna kenyér");
           k.setAr(700);
-          k.setDb(5);
           k.setSuly(1.0);
+          
           k.setCimke(k.getName(),k.getAr());
-          System.out.println(k.getcimke());
+          System.out.println(k.getcimke());*/
+          
+          
+          Cat macska=new Cat();
+          Cat macska1=new Cat(false,"Cirmi",6,true);
+          System.out.println(macska1.getName());
+          System.out.println(macska1.getAge());
+          System.out.println(macska1.getMale());
+          System.out.println(macska1.getAlomkaki());
+          System.out.println(macska1.getLife());
           
     }
     

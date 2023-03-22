@@ -7,10 +7,12 @@ package feb;
 public class user {
     public String name;
     private String szemlyigazolvanyszam;
+    private static int peldany=0;
     public user(){
         //this.name = null;
         //this.szemlyigazolvanyszam=null;
         //return this;
+        peldany++;
     }
     public user(String name){
         this.name=name;
@@ -25,5 +27,8 @@ public class user {
     }
     public void setszemlyigazolvanyszam(String szemlyigazolvanyszam) {
         this.szemlyigazolvanyszam=szemlyigazolvanyszam;
+    }
+    public static Integer getdarab(){
+        return peldany;
     }
 }
