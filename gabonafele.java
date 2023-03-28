@@ -53,8 +53,11 @@ public abstract class gabonafele {
         return suly;
     }
 
-    public void setSuly(Double suly) {
-        this.suly = suly;
+    public void setSuly(Double suly) throws ToobigException{
+        if(suly>=10)this.suly = suly;
+        else{
+        throw new ToobigException("Túl nehéz");
+        }
     }
 
     public String getMinoseg() {

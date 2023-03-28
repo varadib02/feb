@@ -36,8 +36,13 @@ public class Macska {
         return age;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void birthday(Integer age)throws TooOldException{
+        if(this.age>=25){
+        this.age ++;    
+        }
+        else{
+        throw new TooOldException("Ez a macska túl öreg");
+        }
     }
 
     public Boolean getMale() {
@@ -62,6 +67,10 @@ public class Macska {
 
     public void setAlomkaki(Boolean alomkaki) {
         this.alomkaki = alomkaki;
+    }
+
+    void birthday() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

@@ -27,8 +27,10 @@ public class kenyer extends gabonafele{
         return helya;
     }
 
-    public void setHelya(Boolean helya) {
+    public void setHelya(Boolean helya){
+        
         this.helya = helya;
+        
     }
     
     
